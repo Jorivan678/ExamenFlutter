@@ -35,9 +35,11 @@ class _LocationScreen2State extends State<LocationScreen2> {
       var condition = 0;
       if (temperature <= 10) {
         condition = 299;
-      } else if (temperature > 10) {
-        condition = Random().nextInt(505) + 300;
+      } else if (temperature > 10 && temperature < 30) {
+        condition = Random().nextInt(600) + 300;
         //intValue = Random().nextInt(100) + 50; // Value is >= 50 and < 150.
+      } else if (temperature >= 30) {
+        condition = 1000;
       }
       weatherIcon = weather.getWeatherIcon(condition);
       weatherMessage = weather.getMessage(temperature);

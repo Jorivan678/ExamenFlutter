@@ -1,6 +1,6 @@
 class WeatherModel {
   String getWeatherIcon(int condition) {
-    if (condition < 900 && condition > 804) {
+    if (condition <= 804 && condition > 800) {
       return '🌩';
     } else if (condition < 400 && condition > 299) {
       return '🌧';
@@ -12,9 +12,9 @@ class WeatherModel {
       return '🌪️';
     } else if (condition < 800 && condition > 699) {
       return '🌞';
-    } else if (condition == 800) {
+    } else if (condition == 1000) {
       return '☀️';
-    } else if (condition <= 804) {
+    } else if (condition < 900 && condition > 804) {
       return '🌤️';
     } else {
       return '🤷‍';
